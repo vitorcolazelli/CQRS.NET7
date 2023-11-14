@@ -27,7 +27,7 @@ var commandHandler = builder.Services.BuildServiceProvider().GetRequiredService<
 var dispatcher = new CommandDispatcher();
 
 dispatcher.RegisterHandler<NewPostCommand>(commandHandler.HandleAsync);
-dispatcher.RegisterHandler<EditPostCommand>(commandHandler.HandleAsync);
+dispatcher.RegisterHandler<EditMessageCommand>(commandHandler.HandleAsync);
 dispatcher.RegisterHandler<LikePostCommand>(commandHandler.HandleAsync);
 dispatcher.RegisterHandler<AddCommentCommand>(commandHandler.HandleAsync);
 dispatcher.RegisterHandler<EditCommentCommand>(commandHandler.HandleAsync);

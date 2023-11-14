@@ -2,7 +2,7 @@
 
 namespace Post.CMD.Api.Commands
 {
-    public class EditPostCommand : BaseCommand
+    public class EditMessageCommand : BaseCommand
     {
         public string Message { get; set; }
     }

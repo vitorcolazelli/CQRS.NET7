@@ -18,7 +18,7 @@ namespace Post.CMD.Api.Commands
             await _eventSourcingHandler.SaveAsync(aggregate);
         }
 
-        public async Task HandleAsync(EditPostCommand command)
+        public async Task HandleAsync(EditMessageCommand command)
         {
             var aggregate = await _eventSourcingHandler.GetByIdAsync(command.Id);
             aggregate.EditMessage(command.Message);

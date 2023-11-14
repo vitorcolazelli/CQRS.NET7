@@ -17,7 +17,8 @@
       "requireExactSource": true,
       "applicationUrl": "http://localhost:5171",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "KAFKA_TOPIC": "SocialMediaPostEvents"
       }
     },
     "https": {
@@ -28,7 +29,8 @@
       "requireExactSource": true,
       "applicationUrl": "https://localhost:7023;http://localhost:5171",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "KAFKA_TOPIC": "SocialMediaPostEvents"
       }
     },
     "IIS Express": {
@@ -36,7 +38,8 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "KAFKA_TOPIC": "SocialMediaPostEvents"
       }
     }
   }
