@@ -2,26 +2,25 @@
 using CQRS.Core.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Post.CMD.Api.Commands;
-using Post.CMD.Api.DTOs;
 using Post.Common.DTOs;
 
 namespace Post.CMD.Api.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
-    public class EditMessageController : ControllerBase
+    public class DeletePostController : ControllerBase
     {
-        private readonly ILogger<EditMessageController> _logger;
+        private readonly ILogger<DeletePostController> _logger;
         private readonly ICommandDispatcher _commandDispatcher;
 
-        public EditMessageController(ILogger<EditMessageController> logger, ICommandDispatcher commandDispatcher)
+        public DeletePostController(ILogger<DeletePostController> logger, ICommandDispatcher commandDispatcher)
         {
             _logger = logger;
             _commandDispatcher = commandDispatcher;
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult> EditMessageAsync(Guid id, EditMessageCommand command)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeletePostAsync(Guid id, DeletePostCommand command)
         {
             try
             {
@@ -30,7 +29,7 @@ namespace Post.CMD.Api.Controllers
 
                 return Ok(new BaseResponse
                 {
-                    Message = "Edit message request completed successfully!",
+                    Message = "Delete post request completed successfully!",
                 });
             }
             catch (InvalidOperationException ex)
@@ -51,7 +50,7 @@ namespace Post.CMD.Api.Controllers
             }
             catch (Exception ex)
             {
-                const string SAFE_ERROR_MESSAGE = "Erro while processing request to edit the message of a post!";
+                const string SAFE_ERROR_MESSAGE = "Erro while processing request to Delete a post!";
                 _logger.Log(LogLevel.Error, ex, SAFE_ERROR_MESSAGE);
 
                 return StatusCode(StatusCodes.Status500InternalServerError, new BaseResponse
